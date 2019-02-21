@@ -13,12 +13,14 @@ public class ExcExample {
     public void checkNumber(int number){
         try{
             System.out.println(number);
-            if (number > 5) throw new TooBigExc("Число короче больше пяти и вообще иди нахуй");
+            if (number > 5) throw new TooBigExc("Число больше пяти");
         } catch (Exception ex){
             System.out.println(ex.getMessage());
         } catch (TooBigExc tooBigExc){
             System.out.println("number > 5");
             System.out.println(tooBigExc.info());
+        } finally {
+            System.out.println("finally");
         }
 
     }
